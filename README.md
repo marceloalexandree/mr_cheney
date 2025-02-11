@@ -34,6 +34,7 @@ Este projeto é um sistema de acúmulo de desconto por indicação, onde os clie
     ```bash
         cd client
         npm install
+        npm i react-router-dom styled-components react-imask
         npm run dev
     ```
 5. **Acesse o projeto:**

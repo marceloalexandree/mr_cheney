@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { GlobalStyle } from "../styles/global";
 import { TelaLogin } from "../styles/Login.styles";
 import { Link, useNavigate } from "react-router-dom";
+import { IMaskInput } from "react-imask";
 import Logo from "/Logo2.png";
-import { useState } from "react";
 
 export default function Login() {
   
@@ -53,7 +54,7 @@ export default function Login() {
         <img src={Logo} alt="Mr. Cheney" />
         <form onSubmit={handleSubmit}>
           <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} name="nome" placeholder="Digite seu nome completo" required/>
-          <input type="number" value={cpfCliente} onChange={(e) => setCpfCliente(e.target.value)} name="cpf_cliente" placeholder="Digite seu CPF" required/>
+          <IMaskInput mask="000.000.000-00" type="text" value={cpfCliente} onChange={(e) => setCpfCliente(e.target.value)} name="cpf_cliente" placeholder="Digite seu CPF" required/>
           <Link to="/">Ainda não tem uma conta? Cadastre-se!</Link>
           {erro && <p>{erro}</p>}
           <button type="submit">Entrar</button>
